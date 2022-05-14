@@ -26,12 +26,13 @@ public class Jaeger {
         this.strenght = strenght;
         this.armor = armor;
     }
+    
     public void jaegerPrint() {
         System.out.println("Model: " + modelName + "\n" + "Color: " + color + "\n" + "Weapon: " + 
         weapon + "\n" + "Height: " + height + "\n" + "Weight: "+ tonnage + "\n" + "Speed: " + speed + "\n" +
         "Pilots: " + requirePilots + "\n" + "Strenght: " + strenght + "\n" + "Armor: " + armor +"\n");
     }
-
+    
     public void setModelName(String modelName) {
         this.modelName = modelName;
     }
