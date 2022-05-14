@@ -11,7 +11,7 @@ public class Jaeger {
     private int armor;
     private double distance;
 
-    Jaeger(){
+    Jaeger() {
     }
 
     Jaeger(String modelName, String color, String weapon, double height, double tonnage, double speed,
@@ -26,84 +26,90 @@ public class Jaeger {
         this.strenght = strenght;
         this.armor = armor;
     }
+    public void jaegerPrint() {
+        System.out.println("Model: " + modelName + "\n" + "Color: " + color + "\n" + "Weapon: " + 
+        weapon + "\n" + "Height: " + height + "\n" + "Weight: "+ tonnage + "\n" + "Speed: " + speed + "\n" +
+        "Pilots: " + requirePilots + "\n" + "Strenght: " + strenght + "\n" + "Armor: " + armor +"\n");
+    }
 
-    public String setModelName(String modelName) {
+    public void setModelName(String modelName) {
         this.modelName = modelName;
     }
 
-    public void getModelName() {
+    public String getModelName() {
         return modelName;
     }
 
-    public String setColor(String color) {
+    public void setColor(String color) {
         this.color = color;
     }
 
-    public void getColor() {
+    public String getColor() {
         return color;
     }
 
-    public String setWeapon(String weapon) {
+    public void setWeapon(String weapon) {
         this.weapon = weapon;
     }
 
-    public void getWeapon() {
+    public String getWeapon() {
         return weapon;
     }
 
-    public double setHeight(double height) {
+    public void setHeight(double height) {
         this.height = height;
     }
 
-    public void getWeight() {
-        return weight;
+    public double getHeight() {
+        return height;
     }
 
-     public double setTonnage(double tonnage) {
+     public void setTonnage(double tonnage) {
         this.tonnage = tonnage;
     }
 
-    public void getTonnage() {
+    public double getTonnage() {
         return tonnage;
     }
 
-   public double setSpeed(double speed) {
+   public void setSpeed(double speed) {
         this.speed = speed;
     }
 
-    public void getSpeed() {
+    public double getSpeed() {
         return speed;
     }
 
-    public int setRequirePilots(int requirePilots) {
+    public void setRequirePilots(int requirePilots) {
         this.requirePilots = requirePilots;
     }
 
-    public void getRequirePilots() {
+    public int getRequirePilots() {
         return requirePilots;
     }
 
-     public int setStrenght(int strenght) {
+     public void setStrenght(int strenght) {
         this.strenght = strenght;
     }
 
-    public void getStrenght() {
+    public int getStrenght() {
         return strenght;
     }
 
-    public int setArmor(int armor) {
+    public void setArmor(int armor) {
         this.armor = armor;
     }
 
-    public void getArmor() {
+    public int getArmor() {
         return armor;
-
-    public int getDistance() {
-        return distance;
     }
 
     public void run(int time) {
         distance = speed * time;
+    }
+
+    public double getDistance() {
+        return distance;
     }
     
     public void eat() {
