@@ -3,13 +3,29 @@ public class Jaeger {
     private String modelName;
     private String color;
     private String weapon;
-    private double weight;
+    private double height;
     private double tonnage;
     private double speed;
     private int requirePilots;
     private int strenght;
     private int armor;
     private double distance;
+
+    Jaeger(){
+    }
+
+    Jaeger(String modelName, String color, String weapon, double height, double tonnage, double speed,
+        int requirePilots, int strenght, int armor) {
+        this.modelName = modelName;
+        this.color = color;
+        this.weapon = weapon;
+        this.height = height;
+        this.tonnage = tonnage;
+        this.speed = speed;
+        this.requirePilots = requirePilots;
+        this.strenght = strenght;
+        this.armor = armor;
+    }
 
     public String setModelName(String modelName) {
         this.modelName = modelName;
@@ -35,8 +51,8 @@ public class Jaeger {
         return weapon;
     }
 
-    public double setWeight(double weight) {
-        this.weight = weight;
+    public double setHeight(double height) {
+        this.height = height;
     }
 
     public void getWeight() {
