@@ -121,7 +121,7 @@ public class Jaeger {
         System.out.println(modelName + " seet");
     }
     
-    public void learningJava() {
+    public void fight() {
         System.out.println(modelName + " Fight");
     }
 }
