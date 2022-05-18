@@ -1,5 +1,6 @@
 public class Player {
     private String name;
+    private int answer;
 
     Player() {
     }
@@ -8,9 +9,16 @@ public class Player {
         this.name = name;
     }
 
-    public void setName(String inputName) {
-        inputName = new BufferedReader(new InputStreamReader(System.in));
-        this.name = inputName.readLine();
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAnswer(int answer) {
+        this.answer = answer;
+    }
+
+    public int getAnswer() {
+        return answer;
     }
 
     public String getName() {
