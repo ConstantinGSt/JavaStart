@@ -4,16 +4,16 @@ public class Player {
     Player() {
     }
 
-    Player(String name){
+    Player(String name) {
         this.name = name;
     }
 
-    public void setPlayerName(String inputName) {
+    public void setName(String inputName) {
         inputName = new BufferedReader(new InputStreamReader(System.in));
         this.name = inputName.readLine();
     }
 
-    public String getPlayerName() {
+    public String getName() {
         return name;
     }
 }
