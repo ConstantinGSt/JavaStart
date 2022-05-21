@@ -35,6 +35,7 @@ public class GuessNumberEngine {
                 System.out.println(player2.getName() + " Enter your number:");
                 int p2Num = Integer.parseInt(reader.readLine());
                 player2.setAnswer(p2Num);
+                
                 if(player1.getAnswer() == secretNumber) {
                     System.out.println(player1.getName() + " You Win! Congratulations!");
                 } else if(player1.getAnswer() < secretNumber) {
