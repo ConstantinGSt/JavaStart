@@ -8,6 +8,7 @@ public class GuessNumber {
     private char againWhile;
     private Player p1;
     private Player p2;
+
     GuessNumber(Player p1, Player p2) {
         this.p1 = p1;
         this.p2 = p2;
@@ -29,9 +30,10 @@ public class GuessNumber {
                 System.out.println(p2.getName() + " Enter your number:");
                 int p2Num = Integer.parseInt(reader.readLine());
                 p2.setAnswer(p2Num);
-                
+
                 if(p1.getAnswer() == secretNumber) {
                     System.out.println(p1.getName() + " You Win! Congratulations!");
+                    break;
                 } else if(p1.getAnswer() < secretNumber) {
                      System.out.println(p1.getName() + " Your number less < secret number");
                 } else if(p1.getAnswer() > secretNumber) {
@@ -39,12 +41,12 @@ public class GuessNumber {
                 }
                 if(p2.getAnswer() == secretNumber) {
                     System.out.println(p2.getName() + " You Win! Congratulations!");
+                    break;
                 } else if(p2.getAnswer() < secretNumber) {
                     System.out.println(p2.getName() + " Your number less < secret number");
                 } else if(p2.getAnswer() > secretNumber) {
                     System.out.println(p2.getName() + " Your number more > secret number");
                 }
-
             } while(p1.getAnswer() != secretNumber && p2.getAnswer() != secretNumber);
 
             do {
