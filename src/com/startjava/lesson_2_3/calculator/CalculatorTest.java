@@ -1,4 +1,4 @@
-package lesson2;
+package com.startjava.lesson_2_3.calculator;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,9 +7,9 @@ import java.io.InputStreamReader;
 public class CalculatorTest {
 	public static void main(String[] args) throws IOException {
 		char againWhile;
-		
+		Calc calculation = new Calc();
 		do {
-			Calc calculation = new Calc();
+			
 					
 			System.out.println("Calculation start\n");
 			
@@ -36,5 +36,4 @@ public class CalculatorTest {
 			} while (againWhile !='y' & againWhile !='n');
 		} while (againWhile =='y');
 	}
-
 }
