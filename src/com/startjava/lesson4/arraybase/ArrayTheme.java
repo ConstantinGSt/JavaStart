@@ -16,5 +16,12 @@ public class ArrayTheme {
             System.out.println("ar2[" + x++ + "]" + " = " + ar);
         }
         System.out.println("");
+
+        System.out.println("2. Вывод произведения элементов массива");
+        int[] list = new int [10];
+        for(int i =0; i < list.length; i++) {
+            list[i] = i;
+            System.out.println(i);
+        }
     }
 }
