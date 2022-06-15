@@ -28,13 +28,15 @@ public class ArrayTheme {
 
         System.out.println("3. Удаление элементов массива");
         double[] list3 = new double[15];
+        double[] list3_1 = new double[15];
         for(int i=0; i < list3.length; i++) {
             //double a = 
             list3[i] = Math.random();
             System.out.println(list3[i]);
         } 
-        for(Double l : list3) {
-            
+        
+        for(double q : list3_1) {
+            System.out.println(q);
         }
     }
 }
