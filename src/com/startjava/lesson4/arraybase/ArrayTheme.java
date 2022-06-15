@@ -15,8 +15,7 @@ public class ArrayTheme {
         }
         for(int ar : ar2) {
             System.out.println("ar2[" + x++ + "]" + " = " + ar);
-        }
-        System.out.println("");
+        } System.out.println("");
 
         System.out.println("2. Вывод произведения элементов массива");
         int[] list = new int [10];
@@ -25,9 +24,17 @@ public class ArrayTheme {
             if(list[i] > 0 && list[i] < 9) {
                 sum *=list[i];
             } 
-        } System.out.println(" без учета первого и последнего индекса  = " + sum);
-        System.out.println("");
+        } System.out.println("без учета первого и последнего индекса  = " + sum + " \n");
 
-
+        System.out.println("3. Удаление элементов массива");
+        double[] list3 = new double[15];
+        for(int i=0; i < list3.length; i++) {
+            //double a = 
+            list3[i] = Math.random();
+            System.out.println(list3[i]);
+        } 
+        for(Double l : list3) {
+            
+        }
     }
 }
