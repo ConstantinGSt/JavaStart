@@ -7,6 +7,7 @@ public class ArrayTheme {
         int[] ar2 = new int [7];
         int z = ar2.length - 1 ;
         int x = 0;
+        int sum = 1;
         for(int i = 0; i < ar1.length; i++) {
             System.out.println("ar1[" + i + "]" + " = " + ar1[i]);
             ar2[z] = ar1[i];
@@ -21,7 +22,12 @@ public class ArrayTheme {
         int[] list = new int [10];
         for(int i =0; i < list.length; i++) {
             list[i] = i;
-            System.out.println(i);
-        }
+            if(list[i] > 0 && list[i] < 9) {
+                sum *=list[i];
+            } 
+        } System.out.println(" без учета первого и последнего индекса  = " + sum);
+        System.out.println("");
+
+
     }
 }
