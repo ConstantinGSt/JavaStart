@@ -30,11 +30,15 @@ public class ArrayTheme {
         double[] list3 = new double[15];
         double[] list3_1 = new double[15];
         for(int i=0; i < list3.length; i++) {
-            //double a = 
             list3[i] = Math.random();
             System.out.println(list3[i]);
-        } 
-        
+        }
+        System.out.println("Удаление всех больше индекс 7");
+        for(int i = 0; i < list3.length; i++) {
+            if(list3[i] > list3[7]) {
+                list3_1[i] = 0;
+            } else list3_1[i] = list3[i];
+        }
         for(double q : list3_1) {
             System.out.println(q);
         }
