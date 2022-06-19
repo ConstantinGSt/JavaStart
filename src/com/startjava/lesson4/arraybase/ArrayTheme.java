@@ -15,7 +15,8 @@ public class ArrayTheme {
         }
         for(int ar : ar2) {
             System.out.println("ar2[" + x++ + "]" + " = " + ar);
-        } System.out.println("");
+        }
+        System.out.println("");
 
         System.out.println("2. Вывод произведения элементов массива");
         int[] list = new int [10];
@@ -41,6 +42,12 @@ public class ArrayTheme {
         }
         for(double q : list3_1) {
             System.out.println(q);
+        } System.out.println("");
+
+        System.out.println("4. Вывод элементов массива лесенкой в обратном порядке");
+            for(char i = 'A'; i<='Z'; i++)
+        {
+            System.out.println(i);
         }
     }
 }
