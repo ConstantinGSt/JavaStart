@@ -45,8 +45,20 @@ public class ArrayTheme {
         } System.out.println("");
 
         System.out.println("4. Вывод элементов массива лесенкой в обратном порядке");
+<<<<<<< HEAD
         for(char i = 'A'; i<='Z'; i++) {
+=======
+        int chars=0;    
+        for(char i = 'A'; i <='Z' ; i++) { 
+            chars++;
+        }
+        char[] abc = new char [chars];
+        for(char i = 'A'; i <='Z' ; i++) { 
+            int y=0;
+            abc[y] = i;
+>>>>>>> 0f68e6a0c3635e518c192c428b184b86555c3249
             System.out.println(i);
+            y++;
         }
     }
 }
