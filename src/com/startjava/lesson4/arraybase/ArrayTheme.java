@@ -56,12 +56,18 @@ public class ArrayTheme {
             chars++;
         } System.out.println(abc.length);
         System.out.print(abc[25]);
-        
-            for(int i = abc.length - 1; i >= 0; i++) {
+        for(int i = abc.length - 1; i >= 0; i++) {
             System.out.println("");
-                for(int t = 0; t < abc.length-1; t++) {
+            for(int t = 0; t < abc.length-1; t++) {
                 System.out.print(abc[i]);
-                }
+            }
+        }
+
+        System.out.println("5. Генерация уникальных чисел");
+        int[] list5 = new int[30];
+        for(int i=0; i < list5.length; i++) {
+            list3[i] = Math.random(100-60)+60;
+            System.out.println(list3[i]);
         }
     }
 }
