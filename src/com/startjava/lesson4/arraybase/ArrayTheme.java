@@ -45,29 +45,48 @@ public class ArrayTheme {
         } System.out.println("");
 
         System.out.println("4. Вывод элементов массива лесенкой в обратном порядке");
-        int chars = 0;
-        for(char i = 'A'; i<='Z'; i++) {
+        int chars=0; 
+        int arrayIndex=0;
+        for(char i = 'A'; i <='Z' ; i++) { 
             chars++;
         }
         char[] abc = new char[chars];
-        chars = 0;
-        for(char i = 'A'; i<='Z'; i++) {
-            abc[chars] = i;
-            chars++;
-        } System.out.println(abc.length);
-        System.out.print(abc[25]);
-        for(int i = abc.length - 1; i >= 0; i++) {
-            System.out.println("");
-            for(int t = 0; t < abc.length-1; t++) {
-                System.out.print(abc[i]);
-            }
+        for(char i = 'A'; i <='Z' ; i++) { 
+            abc[arrayIndex] = i;
+            arrayIndex++;
         }
+        System.out.print(abc[25]+"");
+        for(int i = abc.length-2; i>=0; i--) {
+            int t = abc.length-1;
+            System.out.println("");
+                while(t >=0 && t > i-1) {
+                    System.out.print(abc[t]);
+                    t--;
+                } 
+        } 
+        System.out.println("\n");
 
         System.out.println("5. Генерация уникальных чисел");
         int[] list5 = new int[30];
-        for(int i=0; i < list5.length; i++) {
-            list3[i] = Math.random(100-60)+60;
-            System.out.println(list3[i]);
+        for (int i = 0; i < list5.length; i++) {
+            list5[i] = (int) ((Math.random() * 40) + 60);
+            System.out.print(list5[i] + " ");
+        }
+        System.out.println(" ");
+        int f;
+        do {
+            f = 0;
+            for (int i = 0; i < list5.length; i++) {
+                for (int j = i+1; j < list5.length; j++) {
+                    if (list5[i] == list5[j]) {
+                        list5[j] = (int) ((Math.random() * 40) + 60);
+                        f++;
+                    }
+                }
+            }
+        } while (f != 0);
+        for (int i = 0; i < list5.length; i++) {
+            System.out.print(list5[i] + " ");
         }
     }
 }
