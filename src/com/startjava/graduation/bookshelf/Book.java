@@ -1,14 +1,14 @@
-package com.startjava.graduation.bookshelf;
+package tests.books;
 
-public class Books {
+public class Book {
     String autor;
     String title;
     String published;
 
-    Books() {
+    Book() {
     }
 
-    Books(String autor, String title, String published) {
+    Book(String autor, String title, String published) {
         this.autor = autor;
         this.title = title;
         this.published = published;
