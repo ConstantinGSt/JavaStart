@@ -1,4 +1,4 @@
-package tests.books;
+package com.startjava.graduation.bookshelf;
 
 public class Book {
     String autor;
