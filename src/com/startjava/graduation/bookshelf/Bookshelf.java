@@ -3,9 +3,13 @@ package com.startjava.graduation.bookshelf;
 import java.util.Scanner;
 
 public class Bookshelf {
+	String end;
 	Scanner scan = new Scanner(System.in);
 	Book[] bookShelf = new Book[10];
 	Book addBook;
+	int inputMenuOption;
+	int booksInShelf = 0;
+	int freeInShelf = 0;
 
 	public void menu() {
 		System.out.println("     Меню");
@@ -19,40 +23,47 @@ public class Bookshelf {
 				+ "для прекращения работы напишите 'end'");
 	}
 
-	public void MyBookShelf(int inputMenuOption) {
-    	if(inputMenuOption == 1) { // info for bookShelf
-    		int booksInShelf = 0;
-			int freeInShelf = 0;
-    		for(int i = 0; i < bookShelf.length; i++) {
-    			if(bookShelf[i] !=null) {
-    				booksInShelf++;
-    			System.out.print("[K]");
-    			} else if(bookShelf[i] == null) {
-    				System.out.print("[]");	
-    				freeInShelf++;
-    			}
-    		}
-    		System.out.println("\n" + "Книг на полке: " + booksInShelf + "\n" 
-    				+ "Свободное место для " + freeInShelf + " книг"  );
-    	}  else if(inputMenuOption == 2) {
-			for (int i = 0; i < bookShelf.length; i++) {
-				if (bookShelf[i] == null) {
-					System.out.println("Добавьте книгу в следующем формате: Автор Ф И О Enter" + "\n"
-							+ "Название Enter" + "\n" + "год издания Enter");
-					addBook = new Book(scan.nextLine(), scan.nextLine(), scan.nextLine());
-					bookShelf[i]=addBook;
-					System.out.println(bookShelf[i].autor + "\n"+ bookShelf[i].title + "\n" + bookShelf[i].published + "\n");
-				} 
-			} 
-//			else if(inputMenuOption == 3) {
-//
-//    	} else if(inputMenuOption == 4) {
-//
-//    	} else if(inputMenuOption == 5) {
-//
-//    	} else if(inputMenuOption == 6) {
-//
-    	
-    }
-   }
+	void startGame() {
+		
+		do {
+			menu();
+			if (scan.hasNextInt()) {
+				inputMenuOption = scan.nextInt();
+				if (inputMenuOption == 1) {
+					for (int i = 0; i < bookShelf.length; i++) {
+						if (bookShelf[i] != null) {
+							booksInShelf++;
+							System.out.print("[K]");
+						} else if (bookShelf[i] == null) {
+							System.out.print("[]");
+							freeInShelf++;
+						}					
+					} System.out.println(
+					"\n" + "Книг на полке: " + booksInShelf + "\n" + "Свободное место для " + freeInShelf + " книг");
+				} else if (inputMenuOption == 2) {
+					do {
+					for (int i = 0; i < bookShelf.length; i++) {
+						if (bookShelf[i] == null) {
+							System.out.println("Добавьте книгу в следующем формате: Автор Ф И О Enter" + "\n" + "Название Enter"
+									+ "\n" + "год издания Enter");
+							addBook = new Book(scan.nextLine(), scan.nextLine(), scan.nextLine());
+							
+							bookShelf[i] = addBook;
+							System.out.println(
+							bookShelf[i].autor + "\n" + bookShelf[i].title + "\n" + bookShelf[i].published + "\n");
+						} 
+					}
+					}while(true);
+//				} else if(inputMenuOption == 3) {
+//				} else if(inputMenuOption == 4) {
+//				} else if(inputMenuOption == 5) {
+//				} else if(inputMenuOption == 6) {
+				}
+				
+			} else if(scan.hasNextLine()) {
+				end = scan.nextLine();
+			}
+		} while("end".equals(end)!=true);
+		scan.close();
+	}
 }
