@@ -8,8 +8,7 @@ public class Bookshelf {
 	Book[] bookShelf = new Book[10];
 	Book addBook;
 	int inputMenuOption;
-	int booksInShelf = 0;
-	int freeInShelf = 0;
+	
 
 	public void menu() {
 		System.out.println("     Меню");
@@ -27,9 +26,12 @@ public class Bookshelf {
 		
 		do {
 			menu();
+			end="W";
 			if (scan.hasNextInt()) {
 				inputMenuOption = scan.nextInt();
 				if (inputMenuOption == 1) {
+					int booksInShelf = 0;
+					int freeInShelf = 0;
 					for (int i = 0; i < bookShelf.length; i++) {
 						if (bookShelf[i] != null) {
 							booksInShelf++;
@@ -42,18 +44,21 @@ public class Bookshelf {
 					"\n" + "Книг на полке: " + booksInShelf + "\n" + "Свободное место для " + freeInShelf + " книг");
 				} else if (inputMenuOption == 2) {
 					do {
-					for (int i = 0; i < bookShelf.length; i++) {
-						if (bookShelf[i] == null) {
-							System.out.println("Добавьте книгу в следующем формате: Автор Ф И О Enter" + "\n" + "Название Enter"
-									+ "\n" + "год издания Enter");
-							addBook = new Book(scan.nextLine(), scan.nextLine(), scan.nextLine());
-							
-							bookShelf[i] = addBook;
-							System.out.println(
-							bookShelf[i].autor + "\n" + bookShelf[i].title + "\n" + bookShelf[i].published + "\n");
-						} 
-					}
-					}while(true);
+						for(int i = 0; i < bookShelf.length;i++) {
+							if("x".equals(end)==true) {
+							break;
+							}else if(bookShelf[i] == null) {
+								System.out.println("Добавьте книгу в следующем формате: Автор Ф И О Enter" + "\n" + "Название Enter"
+										+ "\n" + "год издания Enter");
+								addBook = new Book(scan.nextLine(), scan.nextLine(), scan.nextLine());
+								
+								bookShelf[i] = addBook;
+								System.out.println(
+								bookShelf[i].autor + "\n" + bookShelf[i].title + "\n" + bookShelf[i].published + "\n");
+								end = "x";
+							}
+						}	
+					}while("x".equals(end)!=true);
 //				} else if(inputMenuOption == 3) {
 //				} else if(inputMenuOption == 4) {
 //				} else if(inputMenuOption == 5) {

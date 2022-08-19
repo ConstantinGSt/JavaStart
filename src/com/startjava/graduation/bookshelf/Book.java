@@ -5,8 +5,8 @@ public class Book {
     String title;
     String published;
 
-    Book() {
-    }
+//    Book() {
+//    }
 
     Book(String autor, String title, String published) {
         this.autor = autor;
