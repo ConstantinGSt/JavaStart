@@ -1,16 +1,27 @@
 package com.startjava.graduation.bookshelf;
-import java.util.Scanner;
+import java.io.IOException;
+import java.io.ImputStraemReader;
 
 public class BookshelfTest {
-    public static void main(String[] args) {
-        Bookshelf shelf = new Bookshelf();
-        Book addBook = new Book("Калдырь Мелонхоличный", "Как прибухнуть на самоизоляции в тайне от жОны", "2022г Весна");
-        shelf.bookShelf[0] = addBook;
-        
-//        Scanner scan = new Scanner(System.in);
-//        shelf.scan.next();
-        shelf.startGame();
+    public static void main(String[] args) throws IOException {
+        int inputMenuOption;
+        Bookshelf shelf = new Bookshelf;
 
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+        System.out.println("     Меню");
+        System.out.println("1. ");
+        System.out.println("2. ");
+        System.out.println("3. ");
+        System.out.println("4. ");
+        System.out.println("5. ");
+        System.out.println("6. ");
+        System.out.print("выберите нужное действие и введите соответсвующий номер:");
+
+        inputMenuOption = Integer.parseInt(reader.readLine());
+        System.out.println("");
+        
+        shelf.MyBookShelf(inpitMenuOption);
     }
 
 }
