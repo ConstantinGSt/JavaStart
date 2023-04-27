@@ -7,8 +7,6 @@ public class Bookshelf {
     String end = "go";
     Scanner scan = new Scanner(System.in);
     Book[] bookShelf = new Book[10];
-//    Book addBook = new Book("Калдырь Мелонхоличный", "Как прибухнуть на самоизоляции в тайне от жОны", "2022г Весна");
-//    bookShelf[0] = addBook;
     int inputMenuOption;
 
     void startGame() {
@@ -20,21 +18,36 @@ public class Bookshelf {
                     menuInfo(inputMenuOption);
                 } else if(inputMenuOption == 2) {
                     addBooksToShelf();
+                } else if(inputMenuOption == 3) {
+                    removeBookFromShelf();
+                } else if(inputMenuOption == 4) {
+                    bookInfo();
+                } else if(inputMenuOption == 5) {
+                    // placeholder for future options
+                } else if(inputMenuOption == 6) {
+                    // placeholder for future options
                 }
             } else if(scan.hasNextLine()) {
                 end = scan.nextLine();
-//            } else if(inputMenuOption == 3) {
-
             }
         } while(!end.equals("end"));
         System.out.println("Конец программы");
     }
-
-    public void addBooksToShelf() {   // добавляя книгу на полку
+    public void displayBookshelf() {
         for(int i = 0; i < bookShelf.length; i++) {
             if(bookShelf[i] == null) {
-                System.out.println("Добавьте книгу в следующем формате: Автор Ф И О Enter" + "\n" + "Название Enter"
-                        + "\n" + "год издания Enter");
+                System.out.print("[] ");
+            } else {
+                System.out.print("[\\] ");
+            }
+        }
+        System.out.println();
+    }
+
+    public void addBooksToShelf() {
+        for(int i = 0; i < bookShelf.length; i++) {
+            if(bookShelf[i] == null) {
+                System.out.println("Добавьте книгу в следующем формате: Автор Ф И О Enter" + "\n" + "Название Enter" + "\n" + "год издания Enter");
                 scan.nextLine();
                 bookShelf[i] = new Book(scan.nextLine(), scan.nextLine(), scan.nextLine());
                 break;
@@ -45,32 +58,74 @@ public class Bookshelf {
         }
     }
 
+    public void removeBookFromShelf() {
+        boolean bookFound = false;
+        System.out.println("Введите название книги, которую хотите удалить:");
+        scan.nextLine();
+        String bookToRemove = scan.nextLine();
 
-    public void menuInfo(int num) { // num должен всегда равняться 1
-        int booksInShelf = 0;
-        int freeInShelf = 0;
         for(int i = 0; i < bookShelf.length; i++) {
-            if(bookShelf[i] != null) {
-                booksInShelf++;
-                System.out.print("[K]");
-            } else if(bookShelf[i] == null) {
-                System.out.print("[]");
-                freeInShelf++;
+            if(bookShelf[i] != null && Objects.equals(bookShelf[i].title, bookToRemove)) {
+                bookShelf[i] = null;
+                bookFound = true;
+                break;
             }
         }
-        System.out.println(
-                "\n" + "Книг на полке: " + booksInShelf + "\n" + "Свободное место для " + freeInShelf + " книг" + "\n");
+
+        if(bookFound) {
+            System.out.println("Книга успешно удалена.");
+            menuInfo(1);
+        } else {
+            System.out.println("Книга с таким названием не найдена.");
+            menuInfo(1);
+        }
+    }
+
+    public void bookInfo() {
+        boolean bookFound = false;
+        System.out.println("Введите название книги, которую хотите найти:");
+        scan.nextLine();
+        String bookToFind = scan.nextLine();
+
+        for(int i = 0; i < bookShelf.length; i++) {
+            if(bookShelf[i] != null && Objects.equals(bookShelf[i].title, bookToFind)) {
+                System.out.println("Автор: " + bookShelf[i].author);
+                System.out.println("Название: " + bookShelf[i].title);
+                System.out.println("Год издания: " + bookShelf[i].published);
+                bookFound = true;
+                break;
+            }
+        }
+        if(!bookFound) {
+            System.out.println("Книга с таким названием не найдена.");
+            menuInfo(1);
+        }
     }
 
     public void menu() {
-        System.out.println("     Меню");
-        System.out.println("1. Информация о полке.");
-        System.out.println("2. Добавить книгу.");
-        System.out.println("3. Удалить книгу.");
-        System.out.println("4. Информацяи о книге.");
-        System.out.println("5. ");
-        System.out.println("6. ");
-        System.out.println("Для выбора необходимого действия введите соответсвующий номер,"
-                + "для прекращения работы напишите 'end'");
+        System.out.println("Выберите действие:");
+        System.out.println("1 - Показать информацию о всех книгах на полке");
+        System.out.println("2 - Добавить книгу на полку");
+        System.out.println("3 - Удалить книгу с полки");
+        System.out.println("4 - Найти книгу на полке");
+        System.out.println("5 - Опции для будущих действий");
+        System.out.println("6 - Опции для будущих действий");
+        displayBookshelf();
+    }
+
+    public void menuInfo(int menuOption) {
+        if(menuOption == 1) {
+            for(Book book : bookShelf) {
+                if(book != null) {
+                    System.out.println(book.author + ", " + book.title + ", " + book.published);
+                }
+            }
+            System.out.println("\n");
+        }
+    }
+
+    public static void main(String[] args) {
+        Bookshelf bookshelf = new Bookshelf();
+        bookshelf.startGame();
     }
 }
