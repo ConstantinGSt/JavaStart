@@ -36,9 +36,9 @@ public class Bookshelf {
     public void displayBookshelf() {
         for(int i = 0; i < bookShelf.length; i++) {
             if(bookShelf[i] == null) {
-                System.out.print("[] ");
+                System.out.print("[]");
             } else {
-                System.out.print("[\\] ");
+                System.out.print("[\\]");
             }
         }
         System.out.println();
@@ -65,7 +65,7 @@ public class Bookshelf {
         String bookToRemove = scan.nextLine();
 
         for(int i = 0; i < bookShelf.length; i++) {
-            if(bookShelf[i] != null && Objects.equals(bookShelf[i].title, bookToRemove)) {
+            if(bookShelf[i] != null && Objects.equals(bookShelf[i].getTitle(), bookToRemove)) {
                 bookShelf[i] = null;
                 bookFound = true;
                 break;
@@ -88,10 +88,10 @@ public class Bookshelf {
         String bookToFind = scan.nextLine();
 
         for(int i = 0; i < bookShelf.length; i++) {
-            if(bookShelf[i] != null && Objects.equals(bookShelf[i].title, bookToFind)) {
-                System.out.println("Автор: " + bookShelf[i].author);
-                System.out.println("Название: " + bookShelf[i].title);
-                System.out.println("Год издания: " + bookShelf[i].published);
+            if(bookShelf[i] != null && Objects.equals(bookShelf[i].getTitle(), bookToFind)) {
+                System.out.println("Автор: " + bookShelf[i].getAuthor());
+                System.out.println("Название: " + bookShelf[i].getTitle());
+                System.out.println("Год издания: " + bookShelf[i].getPublished());
                 bookFound = true;
                 break;
             }
@@ -117,7 +117,7 @@ public class Bookshelf {
         if(menuOption == 1) {
             for(Book book : bookShelf) {
                 if(book != null) {
-                    System.out.println(book.author + ", " + book.title + ", " + book.published);
+                    System.out.println(book.getAuthor() + ", " + book.getTitle() + ", " + book.getPublished());
                 }
             }
             System.out.println("\n");
